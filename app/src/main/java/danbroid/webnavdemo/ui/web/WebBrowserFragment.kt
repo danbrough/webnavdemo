@@ -62,7 +62,15 @@ class WebBrowserFragment : Fragment(), URLNavigator.PopBackStackCallback {
 
     urlNavigator.backStackCallback = this
 
-    webView.loadUrl(args.url)
+    if (savedInstanceState == null)
+      webView.loadUrl(args.url)
+    else
+      webView.restoreState(savedInstanceState)
+  }
+
+  override fun onSaveInstanceState(outState: Bundle) {
+    super.onSaveInstanceState(outState)
+    webView.saveState(outState)
   }
 
   override fun onDetach() {

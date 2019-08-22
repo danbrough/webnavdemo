@@ -21,7 +21,7 @@ class URLNavigator : Navigator<NavDestination>() {
     navigatorExtras: Extras?
   ) = destination
 
-  override fun createDestination() = URLDestination(this)
+  override fun createDestination() = NavDestination(this)
 
   override fun popBackStack() = backStackCallback?.popBackStack() ?: false
 
