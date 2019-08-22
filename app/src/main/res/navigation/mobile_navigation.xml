@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_web"
+        android:name="danbroid.webnavdemo.ui.web.WebBrowserFragment"
+        android:label="">
+        <argument
+            android:name="url"
+            android:defaultValue="https://www.rnz.co.nz/"
+            app:argType="string" />
+    </fragment>
+
+    <url android:id="@+id/nav_url">
+        <argument
+            android:name="url"
+            app:argType="string" />
+    </url>
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="danbroid.webnavdemo.ui.tree.TreeFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_tree">
+        <argument
+            android:name="title"
+            android:defaultValue="Home"
+            app:argType="string" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_tree"
+        android:name="danbroid.webnavdemo.ui.tree.TreeFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_tree">
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_nav_tree"
+        app:destination="@id/nav_tree" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="danbroid.webnavdemo.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="danbroid.webnavdemo.ui.settings.SettingsFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_tools" />
+
+
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="danbroid.webnavdemo.ui.share.ShareFragment"
+        android:label="@string/menu_share"
+        tools:layout="@layout/fragment_share" />
+
+    <!-- launchSingleTop as we dont need to go to the settings twice -->
+    <action
+        android:id="@+id/action_global_nav_settings"
+        app:destination="@id/nav_settings"
+        app:launchSingleTop="true" />
+
+
+</navigation>
