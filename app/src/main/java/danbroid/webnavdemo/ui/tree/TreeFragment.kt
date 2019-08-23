@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import danbroid.webnavdemo.R
-import danbroid.webnavdemo.ui.settings.SettingsFragmentDirections
 import kotlinx.android.synthetic.main.fragment_tree.*
 
 class TreeFragment : Fragment() {
@@ -32,10 +31,6 @@ class TreeFragment : Fragment() {
 
     button_b.setOnClickListener {
       findNavController().navigate(TreeFragmentDirections.actionGlobalNavTree("${args.title}/B"))
-    }
-
-    button_bottom.setOnClickListener {
-      findNavController().navigate(SettingsFragmentDirections.actionGlobalNavSettings())
     }
 
     button_web.setOnClickListener {
