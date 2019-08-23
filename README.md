@@ -8,6 +8,4 @@ This link is a deeplink and will take you to the settings page when viewed in th
 
 Deep link test: https://webnavdemo/settings
 
-[Demo Video](media/webnavdemo.webm)
-
-
+![](media/webnavdemo.gif)
