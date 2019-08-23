@@ -5,8 +5,7 @@ This demo project illustrates one solution on how to integrate
 [WebView](https://developer.android.com/reference/android/webkit/WebView) component.
 
 This link is a deeplink and will take you to the settings page when viewed in the demo.
+
 Deep link test: https://webnavdemo/settings
 
-
-
-
+![](media/webnavdemo.gif)
