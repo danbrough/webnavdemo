@@ -11,7 +11,7 @@
         android:label="">
         <argument
             android:name="url"
-            android:defaultValue="https://www.rnz.co.nz/"
+            android:defaultValue="https://github.com/danbrough/webnavdemo/"
             app:argType="string" />
     </fragment>
 
@@ -51,13 +51,21 @@
         android:id="@+id/nav_gallery"
         android:name="danbroid.webnavdemo.ui.gallery.GalleryFragment"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_gallery">
+
+        <deepLink app:uri="webnavdemo/gallery" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/nav_settings"
         android:name="danbroid.webnavdemo.ui.settings.SettingsFragment"
         android:label="@string/menu_settings"
-        tools:layout="@layout/fragment_tools" />
+        tools:layout="@layout/fragment_tools">
+
+        <deepLink app:uri="webnavdemo/settings" />
+
+    </fragment>
 
 
     <fragment
