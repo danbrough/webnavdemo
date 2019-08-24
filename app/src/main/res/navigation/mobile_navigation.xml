@@ -3,24 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_home"
+    tools:ignore="UnusedNavigation">
 
     <fragment
         android:id="@+id/nav_web"
         android:name="danbroid.webnavdemo.ui.web.WebBrowserFragment"
         android:label="">
+
+        <deepLink app:uri="webnavdemo/web" />
+
         <argument
             android:name="url"
             android:defaultValue="https://github.com/danbrough/webnavdemo/"
             app:argType="string" />
     </fragment>
 
+    <!-- Placeholder destination for WebPages that are opened in the WebBrowserFragment -->
     <url android:id="@+id/nav_url">
         <argument
             android:name="url"
             app:argType="string" />
     </url>
 
+    <!-- Start destination and the top level of a navigation tree -->
     <fragment
         android:id="@+id/nav_home"
         android:name="danbroid.webnavdemo.ui.tree.TreeFragment"
@@ -30,9 +36,9 @@
             android:name="title"
             android:defaultValue="Home"
             app:argType="string" />
-
     </fragment>
 
+    <!-- A tree structured navigation destination -->
     <fragment
         android:id="@+id/nav_tree"
         android:name="danbroid.webnavdemo.ui.tree.TreeFragment"
