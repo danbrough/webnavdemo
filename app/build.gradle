@@ -6,20 +6,20 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: "androidx.navigation.safeargs.kotlin"
 
 android {
-  compileSdkVersion 29
+  compileSdkVersion sdk_version
 
   defaultConfig {
     applicationId "danbroid.webnavdemo"
     minSdkVersion 15
-    targetSdkVersion 29
-    versionCode 1
-    versionName "1.0"
+    targetSdkVersion sdk_version
+    versionCode version_code
+    versionName version_name
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
   }
 
   buildTypes {
     release {
-      minifyEnabled false
+      minifyEnabled true // <-- enable minification
       proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
     }
   }
